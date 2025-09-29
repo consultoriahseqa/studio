@@ -7,10 +7,22 @@ interface TripHeaderProps {
 
 export function TripHeader({ title, subtitle }: TripHeaderProps) {
   return (
-    <header className="relative overflow-hidden py-24 md:py-32 text-primary-foreground shadow-2xl">
-       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/70 to-accent/60"></div>
-       <div className="absolute inset-0 bg-black/30 mix-blend-multiply"></div>
-      <div className="container relative mx-auto px-4 text-center animate-fade-in-down">
+    <header className="relative h-screen flex items-center justify-center text-center overflow-hidden text-primary-foreground shadow-2xl">
+      <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-10"></div>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+      >
+        <source
+          src="https://assets.codepen.io/3364143/7b55283f-4053-4205-8cf8-76a165381625.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div className="relative z-20 px-4 animate-fade-in-down">
         <h1 className="text-4xl md:text-6xl font-headline font-bold text-shadow-lg drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
           {title}
         </h1>
@@ -21,5 +33,3 @@ export function TripHeader({ title, subtitle }: TripHeaderProps) {
     </header>
   );
 }
-
-    
