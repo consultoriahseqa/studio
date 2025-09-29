@@ -90,8 +90,8 @@ export default function FieldTripPage() {
   return (
     <div className="bg-background min-h-screen text-foreground">
       <TripHeader
-        title="Salida de Campo: Geología y Conflicto"
-        subtitle="Especialización en Derecho Minero Ambiental"
+        title="GEOLOGÍA, RIESGO Y DERECHO: UNA MIRADA CRÍTICA AL TERRITORIO ANTIOQUEÑO"
+        subtitle="Relatoría de la Salida de Campo. Especialización en Derecho Minero Ambiental"
       />
 
       <main className="container mx-auto px-4 py-12">
