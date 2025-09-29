@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
@@ -19,6 +20,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { MapPin, Book, ExternalLink, Info } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 type ImageInfo = {
   id: string;
@@ -48,14 +50,18 @@ interface ItineraryStopProps {
 
 export function ItineraryStop({ data }: ItineraryStopProps) {
   const [isLoading, setIsLoading] = useState(true);
+  const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
   
+  // Use a regex to replace markdown-style bolding with strong tags
+  const formattedDescription = data.description.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-foreground/90">$1</strong>');
+
   return (
-    <div className="grid md:grid-cols-12 gap-8 items-start animate-fade-in-up">
+    <div className="grid md:grid-cols-12 gap-x-8 gap-y-4 items-start animate-fade-in-up">
       <div className="md:col-span-5 lg:col-span-4">
         <Card className="shadow-lg border-accent/30 sticky top-8">
           <CardHeader>
-            <div className="flex items-center gap-4">
-              <div className="flex-shrink-0">{data.icon}</div>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 pt-1">{data.icon}</div>
               <div>
                 <p className="text-sm font-bold text-accent">PARADA {data.stopNumber}</p>
                 <CardTitle className="font-headline text-3xl">{data.title}</CardTitle>
@@ -63,21 +69,13 @@ export function ItineraryStop({ data }: ItineraryStopProps) {
             </div>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p className="text-muted-foreground">{data.description}</p>
+             <div className="text-muted-foreground space-y-4" dangerouslySetInnerHTML={{ __html: formattedDescription.replace(/\n/g, '<br />') }} />
             {data.note && (
                 <div className="flex items-start gap-3 rounded-lg border border-primary/20 bg-primary/5 p-3">
                     <Info className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <p className="text-sm text-primary-foreground/80">{data.note}</p>
+                    <p className="text-sm text-primary/90">{data.note}</p>
                 </div>
             )}
-            <div>
-              <Button asChild variant="outline" size="sm" className="w-full">
-                <Link href={data.location} target="_blank">
-                  <MapPin className="mr-2 h-4 w-4" />
-                  Ver en mapa: {data.locationName}
-                </Link>
-              </Button>
-            </div>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="bibliography" className="border-b-0">
                 <AccordionTrigger className="text-base font-semibold hover:no-underline">
@@ -105,7 +103,13 @@ export function ItineraryStop({ data }: ItineraryStopProps) {
       </div>
 
       <div className="md:col-span-7 lg:col-span-8">
-        <Carousel className="w-full" opts={{ loop: true }}>
+        <Carousel 
+            className="w-full" 
+            opts={{ loop: true }}
+            plugins={[plugin.current]}
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+        >
           <CarouselContent>
             {data.imageUrls.map((img, index) => (
               <CarouselItem key={index}>
@@ -115,7 +119,10 @@ export function ItineraryStop({ data }: ItineraryStopProps) {
                     alt={`${data.title} - Imagen ${index + 1}`}
                     fill
                     data-ai-hint={img.hint}
-                    className={`object-cover transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+                    className={cn(
+                      "object-cover transition-opacity duration-500",
+                      isLoading ? "opacity-0" : "opacity-100"
+                    )}
                     onLoad={() => setIsLoading(false)}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
@@ -126,6 +133,14 @@ export function ItineraryStop({ data }: ItineraryStopProps) {
           <CarouselPrevious className="left-4" />
           <CarouselNext className="right-4" />
         </Carousel>
+        <div className="mt-4">
+            <Button asChild variant="outline" size="sm" className="w-full">
+            <Link href={data.location} target="_blank">
+                <MapPin className="mr-2 h-4 w-4" />
+                Ver en mapa: {data.locationName}
+            </Link>
+            </Button>
+        </div>
       </div>
     </div>
   );

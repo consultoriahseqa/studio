@@ -9,10 +9,20 @@ import { MapPin, BookOpen, Mountain, Ship, Coffee, Flag, Home } from "lucide-rea
 const stops: StopData[] = [
   {
     stopNumber: 1,
-    title: "Cantera Las Nieves – Copacabana",
+    title: "Conflicto entre Minería, Geología y Gestión del Riesgo: Cantera Las Nieves",
     location: "https://maps.app.goo.gl/qsPhfsmHyoRNjUtx8",
     locationName: "Km 12 Vereda El Cabuyál, Autopista Medellín-Bogotá",
-    description: "Análisis de las causas y consecuencias del movimiento en masa de 2016. Se estudiará el contexto geológico, geomorfológico y las intervenciones antrópicas, conectando procesos geológicos con la regulación minera y ambiental.",
+    description: `El análisis de esta primera parada se centró en el movimiento en masa ocurrido el 26 de octubre de 2016 en la vereda El Cabuyál, municipio de Copacabana. Este evento, catalogado como uno de los deslizamientos más trágicos en el contexto minero del Valle de Aburrá, movilizó un volumen aproximado de entre 40.000 y 53.000 m³ de material. Sus consecuencias fueron devastadoras: 16 personas perdieron la vida y se generó una afectación crítica sobre la Autopista Medellín–Bogotá, una de las principales vías estratégicas de conexión nacional.
+
+**Análisis de articulación Geología–Derecho**
+
+La observación del caso permitió identificar un entramado complejo de factores físicos, jurídicos e institucionales que, en su interacción, derivaron en la materialización del desastre. Desde el punto de vista geológico, la zona presentaba una alta susceptibilidad a deslizamientos, condicionada por la combinación de fuertes pendientes, litologías inestables y la influencia de aguas subterráneas en el macizo rocoso. Sin embargo, estas condiciones de riesgo inherente no fueron suficientemente incorporadas en los procesos de planificación, regulación y seguimiento de la actividad minera.
+
+En el plano jurídico y de gestión, se evidenció una deficiente articulación entre el conocimiento técnico-científico y los instrumentos normativos. El Plan de Manejo Ambiental (PMA) de la cantera resultó inadecuado en cuanto a la prevención y mitigación de riesgos geotécnicos, lo cual dejó en evidencia vacíos en el cumplimiento de las obligaciones ambientales por parte del titular minero, así como en la capacidad de las autoridades para ejercer un control efectivo. El detonante del evento estuvo asociado al flujo de agua proveniente del macizo, cuya presión interna desestabilizó la ladera, lo que refleja fallas tanto en la gestión hidrogeológica como en la implementación de medidas de drenaje y monitoreo.
+
+Desde la perspectiva del derecho minero-ambiental, este caso constituye un referente paradigmático que ilustra la necesidad de reconocer el riesgo geológico como un factor determinante en la expedición, ejecución y supervisión de licencias ambientales. La ausencia de un enfoque integral que articule ciencia, derecho y gestión territorial propicia escenarios de vulnerabilidad donde los costos sociales y ambientales se maximizan, mientras que la capacidad institucional para anticiparse a los impactos permanece limitada.
+
+En consecuencia, el deslizamiento de la Cantera Las Nieves no solo debe entenderse como un evento natural agravado por la actividad humana, sino también como una manifestación de las tensiones estructurales entre el aprovechamiento económico del subsuelo, la seguridad geotécnica del territorio y la responsabilidad estatal en la protección de la vida, la infraestructura y el ambiente.`,
     imageUrls: [
       { id: "copacabana-1", hint: "landslide quarry" },
       { id: "copacabana-2", hint: "mountain road" },
