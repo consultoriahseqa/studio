@@ -8,7 +8,7 @@ import { ItinerarySection, StopData } from "@/components/field-trip/itinerary-se
 import { TeamInfo } from "@/components/field-trip/team-info";
 import { TimelineEntry, TimelineData } from "@/components/field-trip/timeline-entry";
 import { MapPin, BookOpen, Mountain, Ship, Coffee, Utensils, Flag, Home } from "lucide-react";
-import { StopModalProvider } from "@/hooks/use-stop-modal";
+import { StopModalProvider } from "@/hooks/use-stop-modal.tsx";
 import { FullStopModal } from "@/components/field-trip/full-stop-modal";
 
 

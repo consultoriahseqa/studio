@@ -2,6 +2,7 @@
 "use client";
 
 import { create } from 'zustand';
+import React, { useContext, createContext, useState, useEffect } from 'react';
 
 type StopData = {
   stopNumber: number;
@@ -32,8 +33,6 @@ const useStopModalStore = create<StopModalStore>((set) => ({
 }));
 
 // This is a provider component and a hook to use in client components
-import { useContext, createContext, useState, useEffect } from 'react';
-
 const StopModalContext = createContext<StopModalStore | null>(null);
 
 export const StopModalProvider = ({ children }: { children: React.ReactNode }) => {
