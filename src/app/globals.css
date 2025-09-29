@@ -16,13 +16,13 @@
     --secondary-foreground: 150 25% 25%;
     --muted: 150 30% 85%;
     --muted-foreground: 150 10% 46%;
-    --accent: 150 70% 38%; /* Verde acento más vibrante */
-    --accent-foreground: 48 33% 98%;
+    --accent: 45 80% 55%; /* Dorado como color de acento */
+    --accent-foreground: 0 0% 8%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 150 20% 83%;
     --input: 150 20% 86%;
-    --ring: 150 70% 38%;
+    --ring: 45 80% 55%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -65,4 +65,140 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+:root {
+  --lg-bg-color: rgba(0, 0, 0, 0.25);
+  --lg-highlight: rgba(255, 255, 255, 0.25);
+  --lg-text: #ffffff;
+}
+
+.glass-container {
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  color: var(--lg-text);
+  cursor: pointer;
+  background: transparent;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.glass-container--large {
+  min-width: 28rem;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
+
+.player__thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+}
+
+.player__img {
+  width: 4rem;
+  height: 4rem;
+  margin: 0.25rem 0;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.player__legend {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+
+.player__legend__title {
+  font-size: 1rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 0 3px #444;
+  font-weight: 700;
+}
+
+.player__legend__sub-title {
+  font-size: 0.875rem;
+  margin: 0;
+  color: #ccc;
+  text-shadow: 0 0 3px #444;
+  opacity: 0.75;
+}
+
+.player__controls {
+  margin-right: -0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #fff;
+}
+
+.player__controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player__controls__play {
+  margin-right: 0.5rem;
+  display: flex;
+}
+
+.player__controls__ff {
+  display: flex;
+  opacity: 0.5;
+}
+
+.glass-filter {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  backdrop-filter: blur(8px);
+  filter: url(#lg-dist);
+  isolation: isolate;
+}
+
+.glass-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--lg-bg-color);
+}
+
+.glass-specular {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  overflow: hidden;
+  box-shadow: inset 1px 1px 0 var(--lg-highlight),
+    inset 0 0 5px var(--lg-highlight);
+}
+
+.glass-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0.25rem 1.5rem 0.25rem 0.75rem;
+}
+
+.glass-content--inline {
+  flex: 1 1 auto;
+  justify-content: space-between;
 }
