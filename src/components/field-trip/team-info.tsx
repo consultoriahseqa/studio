@@ -19,7 +19,7 @@ export function TeamInfo() {
         <div className="grid md:grid-cols-2">
             <div className="relative min-h-[300px] md:min-h-0">
                  <Image
-                    src="https://i.imgur.com/gK733sP.jpg"
+                    src="https://i.imgur.com/6Rfi6ck.jpg"
                     alt="Foto del equipo"
                     fill
                     className="object-cover"
