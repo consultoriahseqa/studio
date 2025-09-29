@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Texto Maestro',
-  description: 'Genera textos creativos con el poder de la IA.',
+  title: 'Salida de Campo - Derecho Minero Ambiental',
+  description: 'Itinerario de la salida de campo para la Especialización en Derecho Minero Ambiental.',
 };
 
 export default function RootLayout({

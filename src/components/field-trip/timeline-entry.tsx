@@ -36,11 +36,13 @@ export function TimelineEntry({ data, isFirst = false, isLast = false }: Timelin
             <h3 className="text-xl font-headline font-semibold">{data.title}</h3>
             <p className="text-muted-foreground">{data.description}</p>
           </div>
-          <Button asChild variant="ghost" size="icon">
-            <Link href={data.location} target="_blank">
-              <MapPin className="h-5 w-5" />
-            </Link>
-          </Button>
+          {data.location !== "#" && (
+            <Button asChild variant="ghost" size="icon">
+              <Link href={data.location} target="_blank">
+                <MapPin className="h-5 w-5" />
+              </Link>
+            </Button>
+          )}
         </CardContent>
       </Card>
     </div>
