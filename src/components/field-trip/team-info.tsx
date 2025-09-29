@@ -19,7 +19,7 @@ export function TeamInfo() {
         <div className="grid md:grid-cols-2">
             <div className="relative min-h-[300px] md:min-h-0">
                  <Image
-                    src="/team-photo.jpg"
+                    src="https://storage.googleapis.com/monorepo-prod-project-resources/4e3e1daf-0d55-4630-a359-f21748234676/team-photo.jpg"
                     alt="Foto del equipo"
                     fill
                     className="object-cover"
