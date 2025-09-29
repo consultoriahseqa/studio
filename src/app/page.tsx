@@ -1,5 +1,7 @@
 import { TripHeader } from "@/components/field-trip/trip-header";
+import { Introduction } from "@/components/field-trip/introduction";
 import { GeneralInfo } from "@/components/field-trip/general-info";
+import { TeamInfo } from "@/components/field-trip/team-info";
 import { ItineraryStop, StopData } from "@/components/field-trip/itinerary-stop";
 import { TimelineEntry, TimelineData } from "@/components/field-trip/timeline-entry";
 import { MapPin, BookOpen, Mountain, Ship, Coffee, Flag, Home } from "lucide-react";
@@ -94,10 +96,12 @@ export default function FieldTripPage() {
         subtitle="Relatoría de la Salida de Campo. Especialización en Derecho Minero Ambiental"
       />
 
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-12 space-y-16">
+        <Introduction />
         <GeneralInfo />
+        <TeamInfo />
 
-        <section className="mt-16">
+        <section>
           <h2 className="text-4xl font-headline font-bold text-center mb-12 text-primary">
             Itinerario del Día
           </h2>
