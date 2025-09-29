@@ -1,57 +1,152 @@
-import ImageSlider from "@/components/image-slider";
-import { BookOpen, Mountain, Ship, Coffee } from "lucide-react";
 
-const stops = [
+"use client";
+
+import { TripHeader } from "@/components/field-trip/trip-header";
+import { GeneralInfo } from "@/components/field-trip/general-info";
+import { Introduction } from "@/components/field-trip/introduction";
+import { ItinerarySection, StopData } from "@/components/field-trip/itinerary-section";
+import { TeamInfo } from "@/components/field-trip/team-info";
+import { TimelineEntry, TimelineData } from "@/components/field-trip/timeline-entry";
+import { MapPin, BookOpen, Mountain, Ship, Coffee, Utensils, Flag, Home } from "lucide-react";
+import { StopModalProvider } from "@/hooks/use-stop-modal";
+import { FullStopModal } from "@/components/field-trip/full-stop-modal";
+
+
+const stops: StopData[] = [
   {
     stopNumber: 1,
-    title: "Cantera Las Nieves",
-    description: "Análisis de las causas y consecuencias del movimiento en masa de 2016.",
+    title: "Conflicto entre Minería, Geología y Gestión del Riesgo: Cantera Las Nieves",
+    location: "https://maps.app.goo.gl/qsPhfsmHyoRNjUtx8",
+    locationName: "Km 12 Vereda El Cabuyál, Autopista Medellín-Bogotá",
+    description: "El análisis de esta primera parada se centró en el movimiento en masa ocurrido el 26 de octubre de 2016 en la vereda El Cabuyál, municipio de Copacabana.",
+    fullDescription: "**Análisis de articulación Geología–Derecho**\n\nLa observación del caso permitió identificar un entramado complejo de factores físicos, jurídicos e institucionales que, en su interacción, derivaron en la materialización del desastre. Desde el punto de vista geológico, la zona presentaba una alta susceptibilidad a deslizamientos, condicionada por la combinación de fuertes pendientes, litologías inestables y la influencia de aguas subterráneas en el macizo rocoso. Sin embargo, estas condiciones de riesgo inherente no fueron suficientemente incorporadas en los procesos de planificación, regulación y seguimiento de la actividad minera.\n\nEn el plano jurídico y de gestión, se evidenció una deficiente articulación entre el conocimiento técnico-científico y los instrumentos normativos. El Plan de Manejo Ambiental (PMA) de la cantera resultó inadecuado en cuanto a la prevención y mitigación de riesgos geotécnicos, lo cual dejó en evidencia vacíos en el cumplimiento de las obligaciones ambientales por parte del titular minero, así como en la capacidad de las autoridades para ejercer un control efectivo. El detonante del evento estuvo asociado al flujo de agua proveniente del macizo, cuya presión interna desestabilizó la ladera, lo que refleja fallas tanto en la gestión hidrogeológica como en la implementación de medidas de drenaje y monitoreo.\n\nDesde la perspectiva del derecho minero-ambiental, este caso constituye un referente paradigmático que ilustra la necesidad de reconocer el riesgo geológico como un factor determinante en la expedición, ejecución y supervisión de licencias ambientales. La ausencia de un enfoque integral que articule ciencia, derecho y gestión territorial propicia escenarios de vulnerabilidad donde los costos sociales y ambientales se maximizan, mientras que la capacidad institucional para anticiparse a los impactos permanece limitada.\n\nEn consecuencia, el deslizamiento de la Cantera Las Nieves no solo debe entenderse como un evento natural agravado por la actividad humana, sino también como una manifestación de las tensiones estructurales entre el aprovechamiento económico del subsuelo, la seguridad geotécnica del territorio y la responsabilidad estatal en la protección de la vida, la infraestructura y el ambiente.",
     imageUrls: [
-      { id: "copacabana-1", hint: "landslide quarry" },
-      { id: "copacabana-2", hint: "mountain road" },
-      { id: "copacabana-3", hint: "geological analysis" },
+      { id: "DEewvQe", hint: "geological strata" },
+      { id: "rbi4yG9", hint: "excavator quarry" },
+      { id: "z3UQ4wx", hint: "mountain road" },
+      { id: "Ixi7L3U", hint: "field analysis" },
     ],
+    videoUrl: 'https://i.imgur.com/83p86vW.mp4',
     icon: <Mountain className="h-8 w-8 text-primary" />,
+    bibliography: [
+      { title: "Análisis técnico sobre las causas del movimiento en masa...", url: "https://share.google/KrTB8upx98dPFEINd" },
+      { title: "Derrumbe en autopista Medellín-Bogotá...", url: "https://www.elcolombiano.com/antioquia/derrumbe-en-autopista-medellin-bogota-canteras-serian-las-responsables-HD5243779" },
+      { title: "Suspenden temporalmente la explotación de las canteras...", url: "https://share.google/LZYsJFwjWQg17E83n" },
+    ]
   },
   {
     stopNumber: 2,
-    title: "Mirador Cocorná",
-    description: "Reflexión sobre conflictos socioambientales por minería ilegal y proyectos energéticos.",
+    title: "Conflictos Socioambientales y Participación Ciudadana: Mirador Cocorná",
+    note: "En esta parada los estudiantes tienen la posibilidad de desayunar.",
+    location: "https://maps.app.goo.gl/WjarBFezxsafRmAv8",
+    locationName: "Km 13 Vereda La Chorrera, Autopista Medellín-Bogotá",
+    description: "Punto estratégico para observar el corredor del río Cocorná, donde confluyen proyectos energéticos, minería ilegal y procesos de defensa territorial.",
+    fullDescription: "**Análisis de articulación Geografía–Derecho**\n\nEl Mirador de Cocorná ofrece una panorámica que trasciende el paisaje para revelar un territorio en tensión. Aquí se superponen lógicas de desarrollo extractivista, representadas por la expansión de Pequeñas Centrales Hidroeléctricas (PCH) y la persistencia de la minería ilegal de oro, con las aspiraciones de las comunidades locales por mantener sus modos de vida y proteger la vocación agrícola y turística del territorio. Esta parada permitió analizar el rol de la participación ciudadana como un mecanismo clave en la gobernanza ambiental.\n\nDesde una perspectiva jurídica, el caso de Cocorná evidencia los límites y potencialidades de los instrumentos de participación. Las audiencias públicas ambientales, aunque formalmente garantizadas, a menudo se revelan insuficientes para canalizar las demandas ciudadanas de manera efectiva frente a proyectos que cuentan con viabilidad técnica y legal. Esto subraya la importancia de fortalecer el control social y el monitoreo comunitario como contrapesos al poder económico y político de los actores del sector minero-energético. La minería ilegal, por su parte, representa un desafío adicional, al operar al margen de la regulación y generar graves impactos ambientales, como la contaminación de fuentes hídricas con mercurio y la deforestación. El Estado enfrenta aquí un doble reto: por un lado, garantizar el cumplimiento de la ley y sancionar las actividades ilícitas; por otro, generar alternativas económicas sostenibles para las comunidades que dependen de la minería informal.\n\nEn este contexto, la geografía crítica aporta herramientas para comprender el territorio no solo como un contenedor de recursos, sino como un espacio socialmente construido donde se disputan visiones del mundo, intereses y derechos. El conflicto en Cocorná no es meramente ambiental, sino profundamente territorial: es una pugna por definir qué tipo de desarrollo se quiere y quiénes tienen el poder de decidir sobre el futuro de la región.",
     imageUrls: [
-      { id: "cocorna-1", hint: "river valley" },
-      { id: "cocorna-2", hint: "mountain viewpoint" },
-      { id: "cocorna-3", hint: "small town" },
+      { id: "GzR3v0k", hint: "river valley" },
+      { id: "27vI6Vw", hint: "mountain viewpoint" },
+      { id: "JqcD3gU", hint: "small town" },
+      { id: "bAz1d7A", hint: "local agriculture" },
     ],
+    videoUrl: 'https://i.imgur.com/k9uL6iX.mp4',
     icon: <Coffee className="h-8 w-8 text-primary" />,
+    bibliography: [
+      { title: "Configuraciones territoriales, conflictos ambientales y participación...", url: "https://repositorio.unal.edu.co/items/144b9582-da30-4928-b635-2df4088ced83" },
+      { title: "Golpe a la minería ilegal...", url: "https://www.elcolombiano.com/antioquia/destruyen-maquinaria-mineria-ilegal-clan-del-golfo-en-cocorna-KB26631658" },
+      { title: "Audiencia pública ambiental para el proyecto PCH Cocorná III", url: "https://www.cornare.gov.co/noticias-corporativas/por-segunda-vez-se-realizo-audiencia-publica-ambiental-para-el-proyecto-pequena-central-hidroelectrica-cocorna-iii/" },
+    ]
   },
   {
     stopNumber: 3,
-    title: "Río Samaná Norte",
-    description: "Tensiones entre la infraestructura hidroenergética y la conservación socioecológica.",
+    title: "Infraestructura, Conservación y Visiones del Desarrollo: Río Samaná Norte",
+    description: "Este punto permitió una reflexión crítica sobre el modelo de desarrollo basado en la generación hidroeléctrica y sus implicaciones para los ecosistemas y las comunidades.",
+    fullDescription: "**Análisis de articulación Biología–Derecho**\n\nEl río Samaná Norte es un ecosistema de alta importancia estratégica, no solo por su biodiversidad, sino también por ser el último gran río del oriente antioqueño que fluye libre, sin represas en su cauce principal. Sin embargo, esta condición se encuentra amenazada por proyectos como la PCH Porvenir II, que plantean un conflicto directo entre la generación de energía y la conservación de la socio-biodiversidad. Desde la biología de la conservación, el Samaná es un corredor biológico vital que alberga especies endémicas y amenazadas. La fragmentación del río a causa de una represa tendría consecuencias irreversibles sobre la fauna íctica, alteraría los ciclos hidrológicos y afectaría los medios de vida de las comunidades ribereñas que dependen de la pesca y el ecoturismo.\n\nDesde el derecho ambiental, este caso pone de relieve la tensión entre el desarrollo económico y el principio de precaución. Si bien los proyectos hidroeléctricos son presentados como fuentes de energía “limpia”, sus impactos ecosistémicos y sociales pueden ser devastadores. El licenciamiento ambiental de Porvenir II ha estado marcado por controversias, evidenciando la dificultad de valorar adecuadamente los servicios ecosistémicos y la riqueza biocultural que un río como el Samaná representa. La declaratoria del río como sujeto de derechos por parte de tribunales ha sido una herramienta legal innovadora, que busca otorgar una protección jurídica reforzada al ecosistema. No obstante, la efectividad de estas declaratorias depende de la capacidad del Estado para implementarlas y hacerlas cumplir frente a los intereses del sector energético.\n\nLa defensa del río Samaná por parte de movimientos sociales y comunidades locales ilustra una visión alternativa del desarrollo, donde la naturaleza no es vista como un simple recurso a explotar, sino como un entramado de vida del cual depende el bienestar humano. Este enfoque biocultural choca con la lógica puramente economicista que ha dominado la planificación energética del país. El caso del Samaná, por tanto, nos obliga a preguntarnos: ¿qué tipo de desarrollo queremos?, ¿cómo equilibramos la necesidad de energía con la urgencia de conservar nuestros últimos bastiones de biodiversidad? y ¿qué mecanismos legales son más efectivos para proteger los derechos de la naturaleza y de las comunidades que dependen de ella?",
+    location: "https://maps.app.goo.gl/Xkj7QfLv4LnngYyt5",
+    locationName: "Puente Rio Samaná, Autopista Medellín–Bogotá",
     imageUrls: [
-      { id: "samana-1", hint: "wide river" },
-      { id: "samana-2", hint: "jungle bridge" },
-      { id: "samana-3", hint: "fishing community" },
+      { id: "d6kmb3r", hint: "wide river" },
+      { id: "A7k5f1R", hint: "jungle bridge" },
+      { id: "JqcD3gU", hint: "small town" },
+      { id: "bAz1d7A", hint: "local agriculture" },
     ],
+    videoUrl: 'https://i.imgur.com/k9uL6iX.mp4',
     icon: <BookOpen className="h-8 w-8 text-primary" />,
+    bibliography: [
+      { title: "Encuentros de saberes: Pensar con los ríos...", url: "https://www.clacso.org/actividad/encuentros-de-saberes-pensar-con-los-rios-transicion-energetica-culturas-riberenas-y-conservacion-socioecologica-tercer-encuentro-la-proteccion-del-rio-samana-norte/" },
+      { title: "Edicto ANLA – Aprovechamiento hidroeléctrico río Samaná Norte", url: "https://www.cornare.gov.co/edictos/edicto-anla-aprovechamiento-hidroelectrico-rio-samana-norte-o-porvenir-ii/" },
+    ]
   },
   {
     stopNumber: 4,
-    title: "Ríoclaro, Doradal",
-    description: "Interacción entre geología, industria y conservación comunitaria.",
+    title: "Geología, Industria y Conservación en el Karst de la Danta: Ríoclaro",
+    note: "Esta parada incluye almuerzo. Valor: $115.000 COP (recorrido, almuerzo, snack, seguro).",
+    location: "https://maps.app.goo.gl/4JDSmuowtvT5qpej6",
+    locationName: "Sitio de Parada y Embarque",
+    description: "Una experiencia integradora para observar la compleja interacción entre la geología kárstica, la industria cementera y los esfuerzos de conservación comunitaria.",
+    fullDescription: "**Análisis de articulación Geología–Biología–Derecho**\n\nLa Reserva Natural de Ríoclaro es un laboratorio natural para comprender la coexistencia, no exenta de tensiones, entre la explotación de recursos minerales y la conservación de un ecosistema único. El paisaje está dominado por el sistema kárstico, un modelado geológico producto de la disolución de rocas carbonatadas (mármol) que da lugar a cuevas, cañones y una biodiversidad adaptada a estas condiciones particulares. Esta misma geología es la base de la industria cementera, con Cementos Argos como el actor principal en la región. La parada permitió analizar cómo la actividad extractiva ha transformado el paisaje y cómo, a su vez, han surgido iniciativas de conservación y turismo sostenible como contrapeso.\n\nDesde una perspectiva geológica y biológica, el karst de Ríoclaro es un patrimonio natural invaluable. Alberga especies endémicas y formaciones geológicas de gran valor científico. La minería a cielo abierto, si no es manejada adecuadamente, representa una amenaza directa a este patrimonio, no solo por la destrucción del hábitat, sino también por la alteración de los flujos hídricos subterráneos que son vitales para el ecosistema kárstico. El desafío es cómo hacer compatible la extracción de un recurso estratégico para la construcción con la protección de la biodiversidad y los servicios ecosistémicos que ofrece la reserva.\n\nJurídicamente, este caso ilustra la figura de las servidumbres mineras y la complejidad de la planificación territorial en zonas con alto potencial minero y valor ambiental. La coexistencia de una reserva natural privada, gestionada por la Fundación Natura, y una gran explotación minera, obliga a una negociación constante y a la implementación de planes de manejo ambiental rigurosos. El concepto de “minería responsable” se pone a prueba aquí. ¿Es posible una extracción que no comprometa la integridad del ecosistema a largo plazo? ¿Qué garantías legales y técnicas se requieren para asegurar una restauración efectiva de las áreas intervenidas? Ríoclaro demuestra que, si bien la coexistencia es posible, requiere de una gobernanza ambiental robusta, con una autoridad ambiental fuerte, una empresa comprometida con las mejores prácticas y una sociedad civil vigilante y propositiva, como la que representa la reserva natural.",
     imageUrls: [
-      { id: "rioclaro-1", hint: "clear river" },
-      { id: "rioclaro-2", hint: "karst caves" },
-      { id: "rioclaro-3", hint: "rafting tour" },
+      { id: "S4L3k0A", hint: "clear river" },
+      { id: "e8o3yAF", hint: "karst caves" },
+      { id: "N1z0B1B", hint: "rafting tour" },
+      { id: "g3z9Y3M", hint: "tropical forest" },
     ],
+    videoUrl: 'https://i.imgur.com/83p86vW.mp4',
     icon: <Ship className="h-8 w-8 text-primary" />,
+    bibliography: [
+      { title: "Arqueología y gestión del patrimonio del paisaje kárstico...", url: "http://hdl.handle.net/10495/16996" },
+      { title: "Estudios de sistemas kársticos en mármol – La Danta...", url: "https://repositorio.unal.edu.co/handle/unal/87027" },
+      { title: "Geoparques en Colombia: una estrategia para ODS...", url: "https://doi.org/10.18273/revbol.v41n2-2019006" },
+    ]
   },
+];
+
+const timelineEvents: TimelineData[] = [
+  { time: "6:00 am", title: "Punto de Encuentro", description: "TOSTAO' Café & pan / Autónoma", location: "https://maps.app.goo.gl/P5t7GW6fe92hJ9H77", icon: <Flag className="h-6 w-6" /> },
+  { time: "3:00 pm", title: "Inicio del Retorno", description: "Regreso a Medellín", icon: <Home className="h-6 w-6" />, location: "#" },
+  { time: "6:00 pm", title: "Llegada Estimada", description: "TOSTAO' Café & pan / Autónoma", location: "https://maps.app.goo.gl/P5t7GW6fe92hJ9H77", icon: <MapPin className="h-6 w-6" /> },
 ];
 
 export default function FieldTripPage() {
   return (
-    <main>
-      <ImageSlider stops={stops} />
-    </main>
+    <StopModalProvider>
+      <div className="bg-background min-h-screen text-foreground">
+        <TripHeader stops={stops} />
+
+        <main className="container mx-auto px-4 py-12">
+          <Introduction />
+
+          <div className="mt-16 grid gap-16">
+            <GeneralInfo />
+            <TeamInfo />
+          </div>
+
+          <section className="mt-24">
+            <h2 className="text-4xl font-headline font-bold text-center mb-12 text-primary">
+              Itinerario del Día
+            </h2>
+            <div className="relative space-y-24">
+              <div className="absolute left-1/2 top-0 -bottom-8 w-px bg-border/50 -translate-x-1/2 hidden md:block" />
+
+              <TimelineEntry data={timelineEvents[0]} />
+
+              {stops.map((stop, index) => (
+                 <ItinerarySection key={index} stop={stop} reverse={index % 2 !== 0} />
+              ))}
+              
+              <TimelineEntry data={timelineEvents[1]} />
+              <TimelineEntry data={timelineEvents[2]} />
+            </div>
+          </section>
+        </main>
+
+        <footer className="py-8 mt-12 border-t border-border">
+          <div className="container mx-auto text-center text-sm text-muted-foreground">
+            <p>&copy; {new Date().getFullYear()} Facultad de Derecho. Universidad de Antioquia.</p>
+          </div>
+        </footer>
+
+        <FullStopModal />
+      </div>
+    </StopModalProvider>
   );
 }
