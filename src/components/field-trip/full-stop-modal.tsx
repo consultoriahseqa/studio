@@ -38,6 +38,9 @@ export function FullStopModal() {
   if (!stop) {
     return null;
   }
+  
+  // Helper to check if a string is a full URL
+  const isFullUrl = (url: string) => url.startsWith('http');
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -70,7 +73,7 @@ export function FullStopModal() {
                         <CarouselItem key={index}>
                             <div className="aspect-video relative rounded-lg overflow-hidden border">
                             <Image
-                                src={img.id}
+                                src={isFullUrl(img.id) ? img.id : `https://picsum.photos/seed/${img.id}/800/450`}
                                 alt={`${stop.title} - imagen ${index + 1}`}
                                 fill
                                 className="object-contain"
