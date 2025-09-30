@@ -69,12 +69,14 @@ const stops: StopData[] = [
     location: "https://maps.app.goo.gl/Xkj7QfLv4LnngYyt5",
     locationName: "Puente Rio Samaná, Autopista Medellín–Bogotá",
     imageUrls: [
-      { id: "https://i.imgur.com/d6kmb3r.jpeg", hint: "wide river" },
-      { id: "https://i.imgur.com/A7k5f1R.jpeg", hint: "jungle bridge" },
-      { id: "https://i.imgur.com/JqcD3gU.jpeg", hint: "small town" },
-      { id: "https://i.imgur.com/bAz1d7A.jpeg", hint: "local agriculture" },
+      { id: "https://i.imgur.com/TEpsnHw.jpeg", hint: "wide river" },
+      { id: "https://i.imgur.com/UAraOSz.png", hint: "jungle bridge" },
+      { id: "https://i.imgur.com/X3e6JLZ.jpeg", hint: "small town" },
+      { id: "https://i.imgur.com/AkvRbe9.jpeg", hint: "local agriculture" },
+      { id: "https://i.imgur.com/Sby8vzj.jpeg", hint: "river biodiversity" },
+      { id: "https://i.imgur.com/0lBdOGC.jpeg", hint: "community protest" }
     ],
-    videoUrl: 'https://i.imgur.com/k9uL6iX.mp4',
+    videoUrl: 'https://i.imgur.com/BTkXj3Z.mp4',
     icon: <BookOpen className="h-8 w-8 text-primary" />,
     bibliography: [
       { title: "Encuentros de saberes: Pensar con los ríos...", url: "https://www.clacso.org/actividad/encuentros-de-saberes-pensar-con-los-rios-transicion-energetica-culturas-riberenas-y-conservacion-socioecologica-tercer-encuentro-la-proteccion-del-rio-samana-norte/" },
