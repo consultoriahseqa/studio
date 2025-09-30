@@ -22,9 +22,18 @@ export function LegalAnalysis() {
                 <p>
                     El recorrido evidenció que los conflictos ambientales son resultado de fallas sistémicas en la articulación normativa y de gestión entre los procesos geológicos y las actividades económicas.
                 </p>
-                <ol className="list-decimal list-inside space-y-2">
+                <ol className="list-decimal list-inside space-y-3">
                     <li>
                         <strong>Derecho Minero y Gestión del Riesgo (Las Nieves):</strong> El desastre en Copacabana confirma que el Código Minero y las licencias ambientales deben integrarse rigurosamente con la Ley 1523 de 2012 (Gestión del Riesgo). El riesgo geológico debe condicionar la explotación, sancionando de manera ejemplar el incumplimiento que derive en catástrofe.
+                    </li>
+                    <li>
+                        <strong>Participación y Gobernanza (Cocorná):</strong> Las audiencias públicas ambientales demuestran que la ciudadanía usa los mecanismos legales para el control social, mientras el Estado lucha por imponer el ordenamiento territorial frente a la minería ilegal. La defensa del agua es el eje de estos debates.
+                    </li>
+                    <li>
+                        <strong>Transición y Derechos Bioculturales (Samaná Norte):</strong> La transición energética no puede justificar la destrucción del patrimonio biocultural (subiendas) y la economía ribereña. Se requiere un marco jurídico que priorice la conservación del caudal ecológico y la vida comunitaria.
+                    </li>
+                    <li>
+                        <strong>Responsabilidad Empresarial (Río Claro):</strong> Las iniciativas de "cemento verde" deben ser evaluadas por su capacidad real para mitigar el impacto acumulativo en un sistema geológico sensible, promoviendo de forma efectiva programas de conservación comunitaria.
                     </li>
                 </ol>
             </CardContent>
