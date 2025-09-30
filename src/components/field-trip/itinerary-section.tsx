@@ -10,7 +10,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ArrowRight, MapPin } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { useStopModal } from "@/hooks/use-stop-modal";
+import { useStopModal } from "@/hooks/use-stop-modal.tsx";
 
 type ImageInfo = {
   id: string;
@@ -43,6 +43,9 @@ export function ItinerarySection({ stop, reverse = false }: ItinerarySectionProp
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
 
+  // Helper to check if a string is a full URL
+  const isFullUrl = (url: string) => url.startsWith('http');
+
   return (
     <section id={`stop-${stop.stopNumber}`} className="relative max-w-6xl mx-auto animate-fade-in-up">
       <div className={cn("grid md:grid-cols-2 gap-8 md:gap-12 items-center")}>
@@ -56,12 +59,12 @@ export function ItinerarySection({ stop, reverse = false }: ItinerarySectionProp
             <CarouselContent>
               {stop.imageUrls.map((img, index) => (
                 <CarouselItem key={index}>
-                  <div className="aspect-video relative rounded-lg overflow-hidden shadow-lg border border-border">
+                  <div className="aspect-video relative rounded-lg overflow-hidden shadow-lg border border-border bg-black">
                     <Image
-                      src={`https://picsum.photos/seed/${img.id}/800/450`}
+                      src={isFullUrl(img.id) ? img.id : `https://picsum.photos/seed/${img.id}/800/450`}
                       alt={`${stop.title} - imagen ${index + 1}`}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       data-ai-hint={img.hint}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
@@ -76,6 +79,9 @@ export function ItinerarySection({ stop, reverse = false }: ItinerarySectionProp
                         className="w-full h-full object-contain"
                         controls
                         playsInline
+                        loop
+                        autoPlay
+                        muted
                       />
                   </div>
                 </CarouselItem>
@@ -125,3 +131,5 @@ export function ItinerarySection({ stop, reverse = false }: ItinerarySectionProp
     </section>
   );
 }
+
+    

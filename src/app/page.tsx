@@ -21,12 +21,13 @@ const stops: StopData[] = [
     description: "El análisis de esta primera parada se centró en el movimiento en masa ocurrido el 26 de octubre de 2016 en la vereda El Cabuyál, municipio de Copacabana.",
     fullDescription: "**Análisis de articulación Geología–Derecho**\n\nLa observación del caso permitió identificar un entramado complejo de factores físicos, jurídicos e institucionales que, en su interacción, derivaron en la materialización del desastre. Desde el punto de vista geológico, la zona presentaba una alta susceptibilidad a deslizamientos, condicionada por la combinación de fuertes pendientes, litologías inestables y la influencia de aguas subterráneas en el macizo rocoso. Sin embargo, estas condiciones de riesgo inherente no fueron suficientemente incorporadas en los procesos de planificación, regulación y seguimiento de la actividad minera.\n\nEn el plano jurídico y de gestión, se evidenció una deficiente articulación entre el conocimiento técnico-científico y los instrumentos normativos. El Plan de Manejo Ambiental (PMA) de la cantera resultó inadecuado en cuanto a la prevención y mitigación de riesgos geotécnicos, lo cual dejó en evidencia vacíos en el cumplimiento de las obligaciones ambientales por parte del titular minero, así como en la capacidad de las autoridades para ejercer un control efectivo. El detonante del evento estuvo asociado al flujo de agua proveniente del macizo, cuya presión interna desestabilizó la ladera, lo que refleja fallas tanto en la gestión hidrogeológica como en la implementación de medidas de drenaje y monitoreo.\n\nDesde la perspectiva del derecho minero-ambiental, este caso constituye un referente paradigmático que ilustra la necesidad de reconocer el riesgo geológico como un factor determinante en la expedición, ejecución y supervisión de licencias ambientales. La ausencia de un enfoque integral que articule ciencia, derecho y gestión territorial propicia escenarios de vulnerabilidad donde los costos sociales y ambientales se maximizan, mientras que la capacidad institucional para anticiparse a los impactos permanece limitada.\n\nEn consecuencia, el deslizamiento de la Cantera Las Nieves no solo debe entenderse como un evento natural agravado por la actividad humana, sino también como una manifestación de las tensiones estructurales entre el aprovechamiento económico del subsuelo, la seguridad geotécnica del territorio y la responsabilidad estatal en la protección de la vida, la infraestructura y el ambiente.",
     imageUrls: [
-      { id: "DEewvQe", hint: "geological strata" },
-      { id: "rbi4yG9", hint: "excavator quarry" },
-      { id: "z3UQ4wx", hint: "mountain road" },
-      { id: "Ixi7L3U", hint: "field analysis" },
+      { id: "https://i.imgur.com/DEewvQe.jpeg", hint: "geological strata" },
+      { id: "https://i.imgur.com/rbi4yG9.jpeg", hint: "excavator quarry" },
+      { id: "https://i.imgur.com/z3UQ4wx.jpeg", hint: "mountain road" },
+      { id: "https://i.imgur.com/Ixi7L3U.jpeg", hint: "field analysis" },
+      { id: "https://i.imgur.com/IRCJOfe.jpeg", hint: "excavator quarry" },
     ],
-    videoUrl: 'https://i.imgur.com/83p86vW.mp4',
+    videoUrl: 'https://i.imgur.com/KrdLYQb.mp4',
     icon: <Mountain className="h-8 w-8 text-primary" />,
     bibliography: [
       { title: "Análisis técnico sobre las causas del movimiento en masa...", url: "https://share.google/KrTB8upx98dPFEINd" },
@@ -150,3 +151,5 @@ export default function FieldTripPage() {
     </StopModalProvider>
   );
 }
+
+    
