@@ -44,12 +44,16 @@ const stops: StopData[] = [
     description: "Punto estratégico para observar el corredor del río Cocorná, donde confluyen proyectos energéticos, minería ilegal y procesos de defensa territorial.",
     fullDescription: "**Análisis de articulación Geografía–Derecho**\n\nEl Mirador de Cocorná ofrece una panorámica que trasciende el paisaje para revelar un territorio en tensión. Aquí se superponen lógicas de desarrollo extractivista, representadas por la expansión de Pequeñas Centrales Hidroeléctricas (PCH) y la persistencia de la minería ilegal de oro, con las aspiraciones de las comunidades locales por mantener sus modos de vida y proteger la vocación agrícola y turística del territorio. Esta parada permitió analizar el rol de la participación ciudadana como un mecanismo clave en la gobernanza ambiental.\n\nDesde una perspectiva jurídica, el caso de Cocorná evidencia los límites y potencialidades de los instrumentos de participación. Las audiencias públicas ambientales, aunque formalmente garantizadas, a menudo se revelan insuficientes para canalizar las demandas ciudadanas de manera efectiva frente a proyectos que cuentan con viabilidad técnica y legal. Esto subraya la importancia de fortalecer el control social y el monitoreo comunitario como contrapesos al poder económico y político de los actores del sector minero-energético. La minería ilegal, por su parte, representa un desafío adicional, al operar al margen de la regulación y generar graves impactos ambientales, como la contaminación de fuentes hídricas con mercurio y la deforestación. El Estado enfrenta aquí un doble reto: por un lado, garantizar el cumplimiento de la ley y sancionar las actividades ilícitas; por otro, generar alternativas económicas sostenibles para las comunidades que dependen de la minería informal.\n\nEn este contexto, la geografía crítica aporta herramientas para comprender el territorio no solo como un contenedor de recursos, sino como un espacio socialmente construido donde se disputan visiones del mundo, intereses y derechos. El conflicto en Cocorná no es meramente ambiental, sino profundamente territorial: es una pugna por definir qué tipo de desarrollo se quiere y quiénes tienen el poder de decidir sobre el futuro de la región.",
     imageUrls: [
-      { id: "GzR3v0k", hint: "river valley" },
-      { id: "27vI6Vw", hint: "mountain viewpoint" },
-      { id: "JqcD3gU", hint: "small town" },
-      { id: "bAz1d7A", hint: "local agriculture" },
+      { id: "https://i.imgur.com/l3lrIED.jpeg", hint: "river valley" },
+      { id: "https://i.imgur.com/gR7Wb5y.jpeg", hint: "mountain road" },
+      { id: "https://i.imgur.com/X6X40CX.jpeg", hint: "community meeting" },
+      { id: "https://i.imgur.com/txEZSgQ.jpeg", hint: "field analysis" },
+      { id: "https://i.imgur.com/SEGZfBG.jpeg", hint: "waterfall landscape" },
+      { id: "https://i.imgur.com/uiS8ZoN.jpeg", hint: "group photo" },
+      { id: "https://i.imgur.com/MwJtXpS.jpeg", hint: "mountain town" },
+      { id: "https://i.imgur.com/pwRc28w.png", hint: "environmental map" },
     ],
-    videoUrl: 'https://i.imgur.com/k9uL6iX.mp4',
+    videoUrl: 'https://i.imgur.com/abC9xmu.mp4',
     icon: <Coffee className="h-8 w-8 text-primary" />,
     bibliography: [
       { title: "Configuraciones territoriales, conflictos ambientales y participación...", url: "https://repositorio.unal.edu.co/items/144b9582-da30-4928-b635-2df4088ced83" },
@@ -151,5 +155,7 @@ export default function FieldTripPage() {
     </StopModalProvider>
   );
 }
+
+    
 
     
