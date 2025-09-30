@@ -75,9 +75,10 @@ const stops: StopData[] = [
       { id: "https://i.imgur.com/X3e6JLZ.jpeg", hint: "small town" },
       { id: "https://i.imgur.com/AkvRbe9.jpeg", hint: "local agriculture" },
       { id: "https://i.imgur.com/Sby8vzj.jpeg", hint: "river biodiversity" },
-      { id: "https://i.imgur.com/0lBdOGC.jpeg", hint: "community protest" }
+      { id: "https://i.imgur.com/0lBdOGC.jpeg", hint: "community protest" },
+      { id: "https://i.imgur.com/F9Kfxza.jpeg", hint: "river boat" },
     ],
-    videoUrl: 'https://i.imgur.com/BTkXj3Z.mp4',
+    videoUrl: 'https://i.imgur.com/eCKe15A.mp4',
     icon: <BookOpen className="h-8 w-8 text-primary" />,
     bibliography: [
       { title: "Encuentros de saberes: Pensar con los ríos...", url: "https://www.clacso.org/actividad/encuentros-de-saberes-pensar-con-los-rios-transicion-energetica-culturas-riberenas-y-conservacion-socioecologica-tercer-encuentro-la-proteccion-del-rio-samana-norte/" },
@@ -98,9 +99,8 @@ const stops: StopData[] = [
       { id: "https://i.imgur.com/mJ0Ngw3.png", hint: "rafting tour" },
       { id: "https://i.imgur.com/WmzWQ0s.jpeg", hint: "tropical forest" },
       { id: "https://i.imgur.com/rWIy4Rq.jpeg", hint: "jungle canopy" },
-      { id: "https://i.imgur.com/F9Kfxza.jpeg", hint: "river boat" },
     ],
-    videoUrl: 'https://i.imgur.com/eCKe15A.mp4',
+    videoUrl: 'https://i.imgur.com/BTkXj3Z.mp4',
     icon: <Ship className="h-8 w-8 text-primary" />,
     bibliography: [
       { title: "Arqueología y gestión del patrimonio del paisaje kárstico...", url: "http://hdl.handle.net/10495/16996" },
@@ -165,4 +165,5 @@ export default function FieldTripPage() {
   );
 }
 
+    
     
