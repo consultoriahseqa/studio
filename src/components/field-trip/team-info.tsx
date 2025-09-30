@@ -6,11 +6,11 @@ import { Users } from "lucide-react";
 
 export function TeamInfo() {
   const teamMembers = [
-    "Jesús Alberto Rivera Asprilla",
-    "Juan Esteban Martínez Sánchez",
-    "Mauricio Murillo Barrios",
-    "Paula Andrea Jiménez Gómez",
-    "Yenner Arley Florez Uribe"
+    "Florez Uribe Yenner Arley",
+    "Jiménez Gómez Paula Andrea",
+    "Martínez Sánchez Juan Esteban",
+    "Murillo Barrios Mauricio",
+    "Rivera Asprilla Jesus Alberto"
   ];
 
   return (
