@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useRef } from 'react';
@@ -44,6 +45,8 @@ export function TripHeader({ stops }: TripHeaderProps) {
 
   const sliderStops = stops.slice(0, 4);
 
+  const isFullUrl = (url: string) => url.startsWith('http');
+
   return (
      <header className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-background">
         <div className="slider-container">
@@ -53,7 +56,7 @@ export function TripHeader({ stops }: TripHeaderProps) {
                     key={stop.stopNumber}
                     className="item"
                     style={{
-                    backgroundImage: `url(https://picsum.photos/seed/${stop.imageUrls[0].id}/800/600)`,
+                      backgroundImage: `url(${isFullUrl(stop.imageUrls[0].id) ? stop.imageUrls[0].id : `https://picsum.photos/seed/${stop.imageUrls[0].id}/800/600`})`,
                     }}
                     data-ai-hint={stop.imageUrls[0].hint}
                 >
