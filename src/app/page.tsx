@@ -7,6 +7,7 @@ import { Introduction } from "@/components/field-trip/introduction";
 import { ItinerarySection, StopData } from "@/components/field-trip/itinerary-section";
 import { TeamInfo } from "@/components/field-trip/team-info";
 import { TimelineEntry, TimelineData } from "@/components/field-trip/timeline-entry";
+import { LegalAnalysis } from "@/components/field-trip/legal-analysis";
 import { MapPin, BookOpen, Mountain, Ship, Coffee, Utensils, Flag, Home } from "lucide-react";
 import { StopModalProvider } from "@/hooks/use-stop-modal.tsx";
 import { FullStopModal } from "@/components/field-trip/full-stop-modal";
@@ -141,6 +142,8 @@ export default function FieldTripPage() {
                  <ItinerarySection key={index} stop={stop} reverse={index % 2 !== 0} />
               ))}
               
+              <LegalAnalysis />
+
               <TimelineEntry data={timelineEvents[1]} />
               <TimelineEntry data={timelineEvents[2]} />
             </div>
@@ -158,13 +161,5 @@ export default function FieldTripPage() {
     </StopModalProvider>
   );
 }
-
-    
-
-    
-
-    
-
-    
 
     
