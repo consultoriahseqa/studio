@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,7 +7,7 @@ import { GraduationCap, Calendar, Book, Backpack, Info } from "lucide-react";
 export function GeneralInfo() {
   const generalData = [
     { icon: <GraduationCap />, label: "Facultad", value: "Derecho y Ciencias Políticas" },
-    { icon: <Book />, label: "Programa", value: "Especialización en Derecho Minero Ambiental" },
+    { icon: <Book />, label: "Programa", value: "Especialización en Derecho Minero y Ambiental" },
     { icon: <GraduationCap />, label: "Profesores", value: "Manuela Gómez Monsalve" },
     { icon: <Calendar />, label: "Fecha", value: "20 de Septiembre, 2025" },
   ];
