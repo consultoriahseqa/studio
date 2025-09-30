@@ -98,8 +98,9 @@ const stops: StopData[] = [
       { id: "https://i.imgur.com/mJ0Ngw3.png", hint: "rafting tour" },
       { id: "https://i.imgur.com/WmzWQ0s.jpeg", hint: "tropical forest" },
       { id: "https://i.imgur.com/rWIy4Rq.jpeg", hint: "jungle canopy" },
+      { id: "https://i.imgur.com/F9Kfxza.jpeg", hint: "river boat" },
     ],
-    videoUrl: 'https://i.imgur.com/83p86vW.mp4',
+    videoUrl: 'https://i.imgur.com/eCKe15A.mp4',
     icon: <Ship className="h-8 w-8 text-primary" />,
     bibliography: [
       { title: "Arqueología y gestión del patrimonio del paisaje kárstico...", url: "http://hdl.handle.net/10495/16996" },
